@@ -1,8 +1,10 @@
+import glob
 import module
 
-def main():
-    '''
-    Driver code  for encryption and decryption
+def main ():
+    ''''
+    Driver code of text editor
+
     Parameters
     ----------
     None
@@ -10,28 +12,27 @@ def main():
     Return
     ------
     None
-    '''
-    options = int(input('Enter 1 for Encryption \n 2 for decryption::'))
-    try:
-        if options==1:
-            shift_value=input('Enter shift value')
-            file_content = module.read_file(input("Enter the name of file"))
-            print(file_content)
-            encrypted_content = module.encrypt(file_content,shift_value)
-            print('Encrypted Content',encrypted_content)
-            module.file_write(input('Enter File name: '),encrypted_content)
 
-        elif options == 2:
-            shift_value = input('Enter shift value. Keep this in mind enter same value'
-                        ' that entered at encryption time')
-            file_content = module.read_file(input("Enter the name of file of encrypted data"))
-            print(file_content)
-            decrypted_content = module.decrypt(file_content,shift_value)
-            print('Encrypted Content',decrypted_content)
-            module.file_write(input('Enter File name for store decrypted data: '),decrypted_content)
+    '''
+try:
+    while True:
+        print('''
+                    Press o for Open File.
+                    Press e for Edit File
+                     ''')
+        options = input("Select from Menu: ")
+        if options == 'o':
+            print("Following are the files")
+            print(glob.glob('*.*'))
+            filename = input("Enter file name: ")
+            # The argument to the function may be any descriptive text
+            print(module.open_file(filename = filename))
+            input("Press the Enter key to continue: ")
+
+        elif options == 'e':
+            filename = input("Enter file name or path: ")
+            module.edit_file(filename = filename)
         else:
-            print('Enter Valid Options. Re-run code->Thanks')
-    except Exception as exception:
-        raise exception
-if __name__  ==  "__main__":
-    main()
+            print("Please Enter valid options")
+except EOFError:
+    print("Bye")

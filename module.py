@@ -1,13 +1,10 @@
-'''
+""" Text editor with basic functionalities"""
+import os
 
-Encryption and Decryption of data and aslo file handling.
 
-'''
-import random as rd
-
-def generate_random_number() -> int:
-    '''
-    Random number generator to shift the characters.
+def create_file() -> None:
+    """
+    Create file use noname.txt as a filename.
 
     Parameters
     ----------
@@ -15,103 +12,114 @@ def generate_random_number() -> int:
 
     Return
     ------
-    Integer generate randomly .
-    '''
-    return rd.randint(0, 26)
+    None
 
-def read_file(filename : str) -> list[list[str]]:
-    ''''
-    Read content of the file.
-
-    Parameters
-    ----------
-    filename
-        Name of the file that needs to be encrypted.
-    
-    Return
-    ------
-    List of string in which lines of file populated.
-
-    '''
-    file_content=[]
-    with open(filename, 'r', encoding = 'Utf-8') as file:
-        file_content.append(file.readlines())
-    return file_content
+    """
+    with open("noname.txt", 'w', encoding="Utf-8") as file:
+        file.close()
 
 
-
-def encrypt(text1 : list[list[str]], shift : int) -> list[str]:
-    ''''
-    Encrypt data with specific shift .
-    Parameters
-    ----------
-    text
-        List of strings in which file lines are populated.
-    shift
-        Shift value of character
-    
-    Return
-    ------
-    List of string in which encrypted lines of file populated.
-    '''
-    encrypted_lines = []
-    text = text1[0]
-    for lines in text:
-        result = ""
-        for char in lines:
-            if char.isupper():
-                result += chr((ord(char) + shift-65) % 26 + 65)
-            elif char.islower():
-                result += chr((ord(char) + shift-97) % 26 + 97)
-            else:
-                result+=char
-        encrypted_lines.append(result)
-    return encrypted_lines
-
-def decrypt(text1 : list[list[str]], shift : int) -> list[str]:
-    ''''
-    decrypt data with specific shift.
-
-    Parameters
-    ----------
-    text1
-        List of strings in which file lines are populated.
-    shift
-        Shift value of character.
-    
-    Return
-    ------
-    List of string in which decrypted lines of file populated.
-    '''
-    decrypted_lines=[]
-    text=text1[0]
-    for lines in text:
-        result = ""
-        for char in lines:
-            if char.isupper():
-                result += chr((ord(char) - shift-65) % 26 + 65)
-            elif char.islower():
-                result += chr((ord(char) - shift-97) % 26 + 97)
-            else:
-                result+=char
-        decrypted_lines.append(result)
-    return decrypted_lines
-
-def file_write(filename:str,text:list[str]) -> None:
-    ''''
-    Write content of the file.
+def save_file(filename: str, content: str) -> None:
+    """
+    User will enter file name if file name no enter than use 
+    noname.txt as a filename.
 
     Parameters
     ----------
     filename
-        Name of the file that needs to be encrypted.
-    
-    text
-        list of string writes in file.
+        contain name of the file
+    content
+        contain content of file
     Return
     ------
-    List of string in which lines of file populated.
+    None
 
-    '''
-    with open(filename, 'w', encoding = 'Utf-8') as file:
-        file.writelines(text)
+    """
+    # os.rename('noname.txt', filename)
+    try:
+        print('''
+                Press s to Save:
+                Press sa to Save as:
+                ''')
+        options = input("Enter Options here: ")
+        if options == 's':
+            with open(file=filename, mode='w', encoding="Utf-8") as file:
+                file.writelines(content)
+            file.close()
+        if options == 'sa':
+            file_nam = input("Enter file name here: ")
+            os.rename(filename, file_nam)
+    except FileNotFoundError:
+        print('File not found error')
+
+
+def edit_file(filename: str) -> None:
+    """
+    User will enter file name to edit file.
+
+    Parameters
+    ----------
+    filename
+        contain name of the file
+
+    Return
+    ------
+    None
+
+    """
+    content = " "
+    content_str = []
+    try:
+        with open(file=filename, mode='r', encoding='Utf-8') as file:
+            content_str.append(file.readlines())
+        file.close()
+        content = '\n'.join(content_str[0])
+    except FileNotFoundError:
+        print("File not found")
+    try:
+        while True:
+            print('''
+                    Press r to replace words:
+                    Press a to add conrent:
+                 ''')
+            print("Ctrl+Z to End this Editing")
+            print(content)
+
+            options = input('Enter your Option: ')
+            if options == 'r':
+                word_to_replace = input(" Enter the word you want to add: ")
+                replace_with = input(
+                    " Enter the word that you want to change: ")
+                content.replace(replace_with, word_to_replace)
+            elif options == 'a':
+                content_to_append = input(
+                    "Enter your content here. For new line enter '\\n' ")
+                content += content_to_append
+            else:
+                print("Kindly Enter Valid Option.Thanks")
+
+    except EOFError:
+        save_file(filename, content)
+
+
+def open_file(filename: str) -> str:
+    """
+    User will enter file name to edit file.
+
+    Parameters
+    ----------
+    filename
+        contain name of the file
+
+    Return
+    ------
+    None
+
+    """
+    content = ""
+    try:
+        with open(file=filename, mode='r', encoding='Utf-8') as file:
+            content += str(file.readlines())
+    except FileNotFoundError:
+        print("File not found error")
+    return content
