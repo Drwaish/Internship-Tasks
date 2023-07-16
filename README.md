@@ -1,13 +1,13 @@
 # Internship-Tasks
 Upload daily progress during internship
 
-#July 14,2023
+# July 14,2023
 main.py and module.py in **branch 4** contain code for encryption and decryption
 
-#module.py
+# module.py
   In this file, read,write, encryption,decryption methods to fulfill the mentor's requirements
 
-#main
+# main
 
 Driver code of module where user can  have option that he want to encrypt or decrypt file
 
