@@ -1,13 +1,33 @@
-'''
+"""Methods of Contact Management System """
 
-Encryption and Decryption of data and aslo file handling.
 
-'''
-import random as rd
+import json
 
-def generate_random_number() -> int:
-    '''
-    Random number generator to shift the characters.
+
+def write_json(contacts: dict) -> None:
+    """
+    Read json file in which our contacts are stored
+
+    Parameters
+    ----------
+    Dictionary of contacts
+
+    Return
+    ------
+    None
+    """
+    try:
+        json_object = json.dumps(contacts, indent = 4)
+        with open('contacts.json', 'w', encoding = 'Utf-8') as file:
+            file.write(json_object)
+
+    except ReferenceError:
+        print('File Writing Error')
+
+
+def read_json() -> dict:
+    """
+    Read json file in which our contacts are stored
 
     Parameters
     ----------
@@ -15,103 +35,159 @@ def generate_random_number() -> int:
 
     Return
     ------
-    Integer generate randomly .
-    '''
-    return rd.randint(0, 26)
-
-def read_file(filename : str) -> list[list[str]]:
-    ''''
-    Read content of the file.
-
-    Parameters
-    ----------
-    filename
-        Name of the file that needs to be encrypted.
-    
-    Return
-    ------
-    List of string in which lines of file populated.
-
-    '''
-    file_content=[]
-    with open(filename, 'r', encoding = 'Utf-8') as file:
-        file_content.append(file.readlines())
-    return file_content
+    Dictionary of contacts
+    """
+    try:
+        with open('contacts.json', 'r', encoding = 'Utf-8') as file:
+            dict_contact = json.load(file)
+    except ReferenceError:
+        print('Error in file reading')
+    return dict_contact
 
 
-
-def encrypt(text1 : list[list[str]], shift : int) -> list[str]:
-    ''''
-    Encrypt data with specific shift .
-    Parameters
-    ----------
-    text
-        List of strings in which file lines are populated.
-    shift
-        Shift value of character
-    
-    Return
-    ------
-    List of string in which encrypted lines of file populated.
-    '''
-    encrypted_lines = []
-    text = text1[0]
-    for lines in text:
-        result = ""
-        for char in lines:
-            if char.isupper():
-                result += chr((ord(char) + shift-65) % 26 + 65)
-            elif char.islower():
-                result += chr((ord(char) + shift-97) % 26 + 97)
-            else:
-                result+=char
-        encrypted_lines.append(result)
-    return encrypted_lines
-
-def decrypt(text1 : list[list[str]], shift : int) -> list[str]:
-    ''''
-    decrypt data with specific shift.
+def add_contacts(key: str, value: str, contacts: dict) -> None:
+    """
+    Add contacts of user in management system.
 
     Parameters
     ----------
-    text1
-        List of strings in which file lines are populated.
-    shift
-        Shift value of character.
-    
+    Key
+        From key we access the contacts
+    Value
+        Store Contacts of manageemnt sysem
     Return
     ------
-    List of string in which decrypted lines of file populated.
-    '''
-    decrypted_lines=[]
-    text=text1[0]
-    for lines in text:
-        result = ""
-        for char in lines:
-            if char.isupper():
-                result += chr((ord(char) - shift-65) % 26 + 65)
-            elif char.islower():
-                result += chr((ord(char) - shift-97) % 26 + 97)
-            else:
-                result+=char
-        decrypted_lines.append(result)
-    return decrypted_lines
+    None
+    """
+    contacts[key] = value
 
-def file_write(filename:str,text:list[str]) -> None:
-    ''''
-    Write content of the file.
+
+def delet_contacts_key(key: str, contacts: dict) -> None:
+    """
+    Delete contacts of user in management system.
 
     Parameters
     ----------
-    filename
-        Name of the file that needs to be encrypted.
-    
-    text
-        list of string writes in file.
+    Key
+        From key we access the contacts to delete.
+    contacts
+        Dictionary in which our contacts are present
+
     Return
     ------
-    List of string in which lines of file populated.
+    None
+    """
+    try:
+        var = False  #flag value to determine whether key or value found or notuu
+        for elements in contacts:
+            if elements == key:
+                # contacts.pop(elements)
+                var = True
+        if var:
+            contacts.pop(key)
+        if not var:
+            print("Key not found")
+    except RuntimeError:
+        print("Enter Valid Key. Thanks")
 
-    '''
-    with open(filename, 'w', encoding = 'Utf-8') as file:
-        file.writelines(text)
+
+def delet_contacts_value(value: str, contacts: dict) -> None:
+    """
+    Delete contacts of user in management system.
+
+    Parameters
+    ----------
+    value
+        From value we access the contacts to delete.
+    contacts
+        Dictionary in which our contacts are present
+
+    Return
+    ------
+    None
+    """
+    try:
+        var = False #flag value to determine whether key or value found or not
+        key = 'None'
+        for elements in contacts:
+            if contacts[elements] == value:
+                # contacts.pop(elements)
+                key = elements
+                var = True
+        if var:
+            contacts.pop(key)
+        if not var:
+            print("Value not found")
+    except RuntimeError:
+        print("Enter Valid Key. Thanks")
+
+
+def view_contacts(contacts: dict) -> None:
+    """
+    View contacts of user in management system.
+
+    Parameters
+    ----------
+    contacts
+        Dictionary in which our contacts are present
+
+    Return
+    ------
+    Dictionary in which all our contacts are available
+    """
+    print("Here is you contacts: \n", contacts)
+
+
+def update_contacts_key(old_key: str, new_key: str, contacts: dict) -> None:
+    """
+    Update contacts of user in management system.
+
+    Parameters
+    ----------
+    Key
+        From key we access the contacts
+    Value
+        Store Contacts of managemnt sysem
+    Return
+    ------
+    None
+    """
+    try:
+        var = False  #flag value to determine whether key or value found or not
+        for elements in contacts:
+            if elements == old_key:
+                value = contacts[old_key]
+                contacts.pop(old_key)
+                contacts[new_key] = value
+                var = True
+        if not var:
+            print("Key not found")
+    except RuntimeError:
+        print('Problem with Contact file ')
+
+
+def update_contacts_value(old_value: str, new_value: str, contacts: dict) -> None:
+    """
+    Update contacts of user in management system.
+
+    Parameters
+    ----------
+    old_value
+        From value we access the contacts
+    new_value
+        Change ole value with new value
+    Return
+    ------
+    None
+    """
+    try:
+        var = False #flag value to determine whether key or value found or not
+        for elements in contacts:
+            if contacts[elements] == old_value:
+                contacts[elements] = new_value
+                var = True
+        if not var:
+            print("Value  not Found")
+
+    except RuntimeError:
+        print('Problem with Contact file ')
