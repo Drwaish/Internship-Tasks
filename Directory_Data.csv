@@ -1,0 +1,87 @@
+,name,size,unit_of_size,parent_dir,extension
+0,D:\Intern Training\app.py,0.168,KB,D:\Intern Training,.py
+1,D:\Intern Training\Articles\A Dynamic Points Removal Benchmark in Point Cloud Maps.pdf,2.618484375,MB,D:\Intern Training\Articles,.pdf
+2,"D:\Intern Training\Articles\Artificial Intelligence for Science in Quant,Atomistic and Contimum System.pdf",22.8740654296875,MB,D:\Intern Training\Articles,.pdf
+3,D:\Intern Training\Articles\Locally Adaptive Federated Learning.pdf,1.59483203125,MB,D:\Intern Training\Articles,.pdf
+4,D:\Intern Training\Articles\Secrets_of_RLHF_in_LLM_p1PP0.pdf,1.990013671875,MB,D:\Intern Training\Articles,.pdf
+5,D:\Intern Training\Articles,29.077396484375,MB,D:\Intern Training,
+6,D:\Intern Training\Core Concept\.vscode\settings.json,0.127,KB,D:\Intern Training\Core Concept\.vscode,.json
+7,D:\Intern Training\Core Concept\.vscode,0.127,KB,D:\Intern Training\Core Concept,
+8,D:\Intern Training\Core Concept\core_module_12_July.py,2.884,KB,D:\Intern Training\Core Concept,.py
+9,D:\Intern Training\Core Concept\display_func.log,0.269,KB,D:\Intern Training\Core Concept,.log
+10,D:\Intern Training\Core Concept\main_12_July.py,0.741,KB,D:\Intern Training\Core Concept,.py
+11,D:\Intern Training\Core Concept\za.log,0.0,KB,D:\Intern Training\Core Concept,.log
+12,D:\Intern Training\Core Concept\__pycache__\core.cpython-310.pyc,3.449,KB,D:\Intern Training\Core Concept\__pycache__,.pyc
+13,D:\Intern Training\Core Concept\__pycache__,3.449,KB,D:\Intern Training\Core Concept,
+14,D:\Intern Training\Core Concept,7.47,KB,D:\Intern Training,
+15,D:\Intern Training\Core Concept Python.txt,1.465,KB,D:\Intern Training,.txt
+16,D:\Intern Training\coureWithMosh.py,0.068,KB,D:\Intern Training,.py
+17,D:\Intern Training\courseWithMosh.ipynb,2.587,KB,D:\Intern Training,.ipynb
+18,D:\Intern Training\ecoomerce\shipping.py,0.053,KB,D:\Intern Training\ecoomerce,.py
+19,D:\Intern Training\ecoomerce\__init__.py,0.0,KB,D:\Intern Training\ecoomerce,.py
+20,D:\Intern Training\ecoomerce\__pycache__\shipping.cpython-310.pyc,0.262,KB,D:\Intern Training\ecoomerce\__pycache__,.pyc
+21,D:\Intern Training\ecoomerce\__pycache__\__init__.cpython-310.pyc,0.13,KB,D:\Intern Training\ecoomerce\__pycache__,.pyc
+22,D:\Intern Training\ecoomerce\__pycache__,0.392,KB,D:\Intern Training\ecoomerce,
+23,D:\Intern Training\ecoomerce,0.444,KB,D:\Intern Training,
+24,"D:\Intern Training\July 12,2023.txt",0.828,KB,D:\Intern Training,.txt
+25,"D:\Intern Training\July 13,2023.txt",1.36,KB,D:\Intern Training,.txt
+26,D:\Intern Training\July 17.txt,1.271,KB,D:\Intern Training,.txt
+27,D:\Intern Training\July_14_Task\Task1\decrypt.txt,0.033,KB,D:\Intern Training\July_14_Task\Task1,.txt
+28,D:\Intern Training\July_14_Task\Task1\encrypt.txt,0.033,KB,D:\Intern Training\July_14_Task\Task1,.txt
+29,D:\Intern Training\July_14_Task\Task1\main.py,1.353,KB,D:\Intern Training\July_14_Task\Task1,.py
+30,D:\Intern Training\July_14_Task\Task1\module.py,2.754,KB,D:\Intern Training\July_14_Task\Task1,.py
+31,D:\Intern Training\July_14_Task\Task1\temp.txt,0.05,KB,D:\Intern Training\July_14_Task\Task1,.txt
+32,D:\Intern Training\July_14_Task\Task1\zain.txt,0.033,KB,D:\Intern Training\July_14_Task\Task1,.txt
+33,D:\Intern Training\July_14_Task\Task1\__pycache__\module.cpython-310.pyc,2.728,KB,D:\Intern Training\July_14_Task\Task1\__pycache__,.pyc
+34,D:\Intern Training\July_14_Task\Task1\__pycache__,2.728,KB,D:\Intern Training\July_14_Task\Task1,
+35,D:\Intern Training\July_14_Task\Task1,6.983,KB,D:\Intern Training\July_14_Task,
+36,D:\Intern Training\July_14_Task\Task2\contacts.json,0.022,KB,D:\Intern Training\July_14_Task\Task2,.json
+37,D:\Intern Training\July_14_Task\Task2\def.txt,0.057,KB,D:\Intern Training\July_14_Task\Task2,.txt
+38,D:\Intern Training\July_14_Task\Task2\main.py,3.248,KB,D:\Intern Training\July_14_Task\Task2,.py
+39,D:\Intern Training\July_14_Task\Task2\module.py,4.606,KB,D:\Intern Training\July_14_Task\Task2,.py
+40,D:\Intern Training\July_14_Task\Task2\za.txt,0.021,KB,D:\Intern Training\July_14_Task\Task2,.txt
+41,D:\Intern Training\July_14_Task\Task2\__pycache__\module.cpython-310.pyc,4.203,KB,D:\Intern Training\July_14_Task\Task2\__pycache__,.pyc
+42,D:\Intern Training\July_14_Task\Task2\__pycache__,4.203,KB,D:\Intern Training\July_14_Task\Task2,
+43,D:\Intern Training\July_14_Task\Task2,12.158,KB,D:\Intern Training\July_14_Task,
+44,D:\Intern Training\July_14_Task\Task3\def.txt,0.057,KB,D:\Intern Training\July_14_Task\Task3,.txt
+45,D:\Intern Training\July_14_Task\Task3\main.py,0.947,KB,D:\Intern Training\July_14_Task\Task3,.py
+46,D:\Intern Training\July_14_Task\Task3\main_t4.py,1.533,KB,D:\Intern Training\July_14_Task\Task3,.py
+47,D:\Intern Training\July_14_Task\Task3\module.py,3.08,KB,D:\Intern Training\July_14_Task\Task3,.py
+48,D:\Intern Training\July_14_Task\Task3\module_sync.py,3.426,KB,D:\Intern Training\July_14_Task\Task3,.py
+49,D:\Intern Training\July_14_Task\Task3\temp.txt,0.05,KB,D:\Intern Training\July_14_Task\Task3,.txt
+50,D:\Intern Training\July_14_Task\Task3\za.txt,0.021,KB,D:\Intern Training\July_14_Task\Task3,.txt
+51,D:\Intern Training\July_14_Task\Task3\zain.txt,0.033,KB,D:\Intern Training\July_14_Task\Task3,.txt
+52,D:\Intern Training\July_14_Task\Task3\__pycache__\module.cpython-310.pyc,2.777,KB,D:\Intern Training\July_14_Task\Task3\__pycache__,.pyc
+53,D:\Intern Training\July_14_Task\Task3\__pycache__\module_sync.cpython-310.pyc,3.0,KB,D:\Intern Training\July_14_Task\Task3\__pycache__,.pyc
+54,D:\Intern Training\July_14_Task\Task3\__pycache__,5.777,KB,D:\Intern Training\July_14_Task\Task3,
+55,D:\Intern Training\July_14_Task\Task3,14.925,KB,D:\Intern Training\July_14_Task,
+56,D:\Intern Training\July_14_Task\Task4\main.py,0.0,KB,D:\Intern Training\July_14_Task\Task4,.py
+57,D:\Intern Training\July_14_Task\Task4\module.py,0.062,KB,D:\Intern Training\July_14_Task\Task4,.py
+58,D:\Intern Training\July_14_Task\Task4\temp.txt,0.05,KB,D:\Intern Training\July_14_Task\Task4,.txt
+59,D:\Intern Training\July_14_Task\Task4,0.112,KB,D:\Intern Training\July_14_Task,
+60,D:\Intern Training\July_14_Task,34.179,KB,D:\Intern Training,
+61,D:\Intern Training\July_18\task.ipynb,4.257,KB,D:\Intern Training\July_18,.ipynb
+62,D:\Intern Training\July_18,4.257,KB,D:\Intern Training,
+63,D:\Intern Training\July_19\.vscode\launch.json,0.498,KB,D:\Intern Training\July_19\.vscode,.json
+64,D:\Intern Training\July_19\.vscode,0.498,KB,D:\Intern Training\July_19,
+65,D:\Intern Training\July_19\main.py,0.0,KB,D:\Intern Training\July_19,.py
+66,D:\Intern Training\July_19\module.py,0.123,KB,D:\Intern Training\July_19,.py
+67,D:\Intern Training\July_19\task.ipynb,34.013,KB,D:\Intern Training\July_19,.ipynb
+68,D:\Intern Training\July_19,34.634,KB,D:\Intern Training,
+69,D:\Intern Training\MachineLearnongProject\helloWorld.ipynb,10.615,KB,D:\Intern Training\MachineLearnongProject,.ipynb
+70,D:\Intern Training\MachineLearnongProject\vgsales.csv,1.2929736328125,MB,D:\Intern Training\MachineLearnongProject,.csv
+71,D:\Intern Training\MachineLearnongProject,1.30333984375,MB,D:\Intern Training,
+72,D:\Intern Training\PPO\.vscode\settings.json,0.045,KB,D:\Intern Training\PPO\.vscode,.json
+73,D:\Intern Training\PPO\.vscode,0.045,KB,D:\Intern Training\PPO,
+74,D:\Intern Training\PPO\main.py,0.354,KB,D:\Intern Training\PPO,.py
+75,D:\Intern Training\PPO\module.py,1.432,KB,D:\Intern Training\PPO,.py
+76,D:\Intern Training\PPO\__pycache__\module.cpython-310.pyc,1.537,KB,D:\Intern Training\PPO\__pycache__,.pyc
+77,D:\Intern Training\PPO\__pycache__,1.537,KB,D:\Intern Training\PPO,
+78,D:\Intern Training\PPO,3.368,KB,D:\Intern Training,
+79,D:\Intern Training\Prize Task\main.py,0.37,KB,D:\Intern Training\Prize Task,.py
+80,D:\Intern Training\Prize Task\module.py,2.555,KB,D:\Intern Training\Prize Task,.py
+81,D:\Intern Training\Prize Task\task.ipynb,4.411,KB,D:\Intern Training\Prize Task,.ipynb
+82,D:\Intern Training\Prize Task\__pycache__\module.cpython-310.pyc,2.198,KB,D:\Intern Training\Prize Task\__pycache__,.pyc
+83,D:\Intern Training\Prize Task\__pycache__,2.198,KB,D:\Intern Training\Prize Task,
+84,D:\Intern Training\Prize Task,9.534,KB,D:\Intern Training,
+85,D:\Intern Training,30.48,KB,D:\,
