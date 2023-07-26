@@ -1,7 +1,7 @@
 # Internship-Tasks
 Upload daily progress during internship
 
-#Api for Function Prediciton of Solvent
+# Api for Function Prediciton of Solvent
 **Request payload : **
       {
         "cas" : "100-42-5",
