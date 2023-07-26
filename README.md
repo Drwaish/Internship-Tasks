@@ -8,6 +8,8 @@ Upload daily progress during internship
         "was" : 0.01,
         "category" : "BODY WASH"
     }
+
+    
 **Response**
     {
     "Status": 200,
