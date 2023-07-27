@@ -2,14 +2,12 @@
 import json
 from typing import Dict, Optional, Tuple
 import pandas as pd
-from flask import Flask, jsonify ,request
-from flask_httpauth import HTTPBasicAuth
-
+from flask import jsonify ,request
+from apiflask import APIFlask, abort
 from prediction import predict
 
 
-app = Flask(__name__)
-auth = HTTPBasicAuth()
+app = APIFlask(__name__, json_errors = False)
 
 # @app.route('/rest-auth')
 # @auth.login_required
@@ -48,7 +46,7 @@ def validte_data(cas: Optional[str] = None, was: Optional[float] = None,
     ------
     bool
     """
-    if type(cas) is str and type(was) is float and  type(category) is str:
+    if isinstance(cas,str) and isinstance(was,float)  and  isinstance(category,str):
         return True
     else:
         return False
@@ -97,10 +95,21 @@ def convert_prediction_ready(cas: Optional[str] = None, category: Optional[str] 
                 if func_ele[1] == func:
                     func_index = func_ele[0]
                     break
-            return (func_index)
+            return func_index
     except FileNotFoundError: 
         print("File not Found")
-    return (False)
+    return False
+def index(request_auth) -> bool:
+    """
+    Authenticate the use 
+
+    """
+    headers = request.headers
+    auth = headers.get("X-Api-Key")
+    if auth == 'asoidewfoef':
+        return True
+    else:
+        return False
 
 @app.route("/prediction",methods = ["POST","GET"])
 def prediction() -> Dict:
@@ -117,42 +126,44 @@ def prediction() -> Dict:
     """
     try:
         if request.method =="POST":
-            data = request.get_json()
-            elements=["cas","was","category"]
-            for ele in elements:
-                if ele not in data:
-                    return jsonify({"Status" : 400,
-                                    "message": "Bad Params"})
+            if index(request):
+                data = request.get_json()
+                elements=["cas","was","category"]
+                for ele in elements:
+                    if ele not in data:
+                        abort(401, message=" Wrong key value ",
+                              detail="Parameter keys are not correct ")
 
-            cas = data['cas']
-            was = data['was']
-            category = data["category"]
+                cas = data['cas']
+                was = data['was']
+                category = data["category"]
 
-            print("Before Validate", cas +"-" + str(was) + "-" + category)
-            predicted = -1
-            if validte_data(cas, was, category):
-                cas_x,category_x = convert_prediction_ready(cas=cas,category=category)
-                print("In Validate", str(cas_x) +"-" + str(was) + "-" + str(category_x))
+                print("Before Validate", cas +"-" + str(was) + "-" + category)
+                predicted = -1
+                if validte_data(cas, was, category):
+                    cas_x,category_x = convert_prediction_ready(cas=cas,category=category)
+                    print("In Validate", str(cas_x) +"-" + str(was) + "-" + str(category_x))
 
-                df_dict = {"CAS" : cas_x,
-                    "Max_WF" : was,
-                    "category" : category_x
-                    }
-                data_frame = pd.DataFrame(df_dict, index=[0])
-                print("dataframe for pred",data_frame)
-                predicted = predict.predict(data_frame)
-                print("predicition", predicted)
-                funct = convert_prediction_ready(func = predicted)
-                print(funct)
-                return jsonify({"Status": 200,
-                         "message" : "Your function is " + funct        
-                })
+                    df_dict = {"CAS" : cas_x,
+                        "Max_WF" : was,
+                        "category" : category_x
+                        }
+                    data_frame = pd.DataFrame(df_dict, index=[0])
+                    print("dataframe for pred",data_frame)
+                    predicted = predict.predict(data_frame)
+                    print("predicition", predicted)
+                    funct = convert_prediction_ready(func = predicted)
+                    print(funct)
+                    return jsonify({"Status": 200,
+                                "message" : "Your function is " + funct        
+                    })
+                else:
+                    abort(400, message = "Something went wrong")
             else:
-                return jsonify({"Success" : 400,
-                                "message" : "Bad params"})
-
+                abort(401, message = "UnAuthorized")           
     except RuntimeError:
         print("Runtime error")
+
 if __name__ == "__main__":
     app.run(port=3000, debug=True)
         
