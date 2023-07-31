@@ -1,0 +1,5 @@
+ultralytics
+flask
+APIFlask
+python-dotenv
+Pillow
